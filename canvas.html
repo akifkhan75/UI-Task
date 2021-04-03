@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>UI Task</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div class="top-bar">
+          <div class="next-page">
+            <a href="index.html"
+              ><i class="ic ic-exit_to_app"></i> Go to Alarms</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <section class="canvas-section">
+        <div class="toolbar-container">
+          <div class="toolbar">
+            <a
+              href="javascript:void(0)"
+              onclick="addIcon('icons/icon-6.svg',400,800)"
+              ><img src="icons/icon-6.svg" alt=""
+            /></a>
+            <a
+              href="javascript:void(0)"
+              onclick="addIcon('icons/icon-2.svg',300,600)"
+              ><img src="icons/icon-2.svg" alt=""
+            /></a>
+            <a
+              href="javascript:void(0)"
+              onclick="addIcon('icons/icon-1.svg',250,560)"
+              ><img src="icons/icon-1.svg" alt=""
+            /></a>
+            <a
+              href="javascript:void(0)"
+              onclick="addIcon('icons/icon-3.svg',430,770)"
+              ><img src="icons/icon-3.svg" alt=""
+            /></a>
+            <a
+              href="javascript:void(0)"
+              onclick="addIcon('icons/icon-4.svg',510,580)"
+              ><img src="icons/icon-4.svg" alt=""
+            /></a>
+            <div class="toolbar-controls">
+              <img src="icons/icon-5.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <canvas id="canvas" width="1600" height="900"></canvas>
+        <!-- <svg
+          id="icon-1"
+          draggable="true"
+          onclick="addCircle()"
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M25 0C38.8071 0 50 11.1929 50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0Z"
+            fill="#6B869A"
+          />
+          <path
+            d="M25 1C11.7452 1 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25C49 11.7452 38.2548 1 25 1Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16 15C14.8954 15 14 15.8954 14 17V23C14 24.1046 14.8954 25 16 25H22C23.1046 25 24 24.1046 24 23V17C24 15.8954 23.1046 15 22 15H16ZM16 26C14.8954 26 14 26.8954 14 28V34C14 35.1046 14.8954 36 16 36H22C23.1046 36 24 35.1046 24 34V28C24 26.8954 23.1046 26 22 26H16ZM25 17C25 15.8954 25.8954 15 27 15H33C34.1046 15 35 15.8954 35 17V23C35 24.1046 34.1046 25 33 25H27C25.8954 25 25 24.1046 25 23V17ZM27 26C25.8954 26 25 26.8954 25 28V34C25 35.1046 25.8954 36 27 36H33C34.1046 36 35 35.1046 35 34V28C35 26.8954 34.1046 26 33 26H27Z"
+            fill="url(#paint0_linear)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear"
+              x1="45.266"
+              y1="25.734"
+              x2="24.734"
+              y2="5.20201"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#51BCF5" />
+              <stop offset="1" stop-color="#355EE7" />
+            </linearGradient>
+          </defs>
+        </svg> -->
+      </section>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.3.1/fabric.min.js"></script>
+
+    <script>
+      var canvas = new fabric.Canvas("canvas");
+
+      $(function() {
+        addIcon("icons/icon-6.svg");
+      });
+
+      function addIcon(icon, _t, _l) {
+        var c = fabric.Image.fromURL(icon, function(svg) {
+          svg
+            .set({
+              top: _t,
+              left: _l,
+              originX: "center",
+              originY: "center",
+              centeredRotation: false,
+              lockScalingX: false,
+              lockScalingY: false,
+              lockRotation: true,
+              hasControls: true
+            })
+            .scale(1.6);
+
+          canvas.add(svg);
+        });
+      }
+    </script>
+  </body>
+</html>

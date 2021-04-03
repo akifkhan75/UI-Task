@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>UI Task</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div class="top-bar">
+          <ul class="breadcrumb">
+            <li><i class="ic-home_filled"></i></li>
+            <li><a href="">Alarms</a></li>
+          </ul>
+          <div class="next-page">
+            <a href="canvas.html"
+              >Go to Canvas <i class="ic ic-exit_to_app"></i
+            ></a>
+          </div>
+        </div>
+        <h2 class="page-header-title">Alarms</h2>
+      </header>
+
+      <section class="table-container">
+        <div class="table-header">
+          <div class="btn-group table-header_item">
+            <button class="btn btn-primary-outline active">
+              <i class="ic ic-menu"></i> Recent
+            </button>
+            <button class="btn btn-primary-outline">
+              <i class="ic ic-history"></i> History
+            </button>
+          </div>
+
+          <div class="table-header_item">
+            <button class="btn btn-primary-outline btn-md">
+              <i class="ic ic-file_download"></i> Export
+            </button>
+          </div>
+
+          <div class="alarm-count table-header_item">
+            <h3>37</h3>
+            <p>Alarms</p>
+            <small>Last 24 hrs</small>
+          </div>
+
+          <div class="active-alarms table-header_item">
+            <p>Active Alarms</p>
+            <p>
+              <span class="critical">12</span>
+            </p>
+            <p>
+              <span class="major">23</span>
+            </p>
+            <p>
+              <span class="minor">18</span>
+            </p>
+            <p>
+              <span class="warning">11</span>
+            </p>
+            <p>
+              <span class="info">8</span>
+            </p>
+          </div>
+
+          <div class="search table-header_item">
+            <div class="input-group">
+              <input type="text" placeholder="Search" />
+            </div>
+          </div>
+
+          <div class="search-by-date table-header_item">
+            <p>Search by Date</p>
+            <a href=""><i class="ic-event_note"></i></a>
+          </div>
+        </div>
+        <table class="table-fixed">
+          <thead>
+            <tr>
+              <td>Number</td>
+              <td>Severity</td>
+              <td>Element IP</td>
+              <td>Element Name</td>
+              <td>Time</td>
+              <td>Controller</td>
+              <td>Category</td>
+              <td>Alarm ID</td>
+              <td class="description">Description</td>
+              <td colspan="2" align="right">
+                <a href="">Clear all alarms</a>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>7515</td>
+              <td>
+                <span class="tag tag-critical">Critical</span>
+              </td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-major">major</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-critical">Critical</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-critical">Critical</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-major">mafor</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-major">major</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-minor">minor</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-minor">minor</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-warning">warning</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-critical">Critical</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-warning">warning</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-info">info</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7515</td>
+              <td><span class="tag tag-info">info</span></td>
+              <td>10.0.7.209</td>
+              <td>AO-2440-209</td>
+              <td>13:15 04/26/18</td>
+              <td>07</td>
+              <td>Port</td>
+              <td>8967</td>
+              <td class="description">
+                Port 0:01 Loss of Signal; Port 10/3 Optical: Active /
+                Electrical: Active
+              </td>
+              <td class="action-col">
+                <a href="">See Details</a>
+                <a href="" class="muted">Clear</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
