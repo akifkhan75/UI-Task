@@ -280,12 +280,12 @@ main {
     thead {
       background: #f8f8f8;
       // fixed
-      width: 99%;
-      display: block;
+      // width: 99%;
+      // display: block;
       tr {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
+        // display: flex;
+        // width: 100%;
+        // justify-content: space-between;
         td {
           position: sticky;
           top: 0;
@@ -305,14 +305,14 @@ main {
     }
     tbody {
       // fixed
-      display: block;
-      // height: 230px;
-      overflow-y: auto;
-      width: 100%;
+      // display: block;
+      // // height: 230px;
+      // overflow-y: auto;
+      // width: 100%;
       tr {
         // fixed
-        display: flex;
-        width: 100%;
+        // display: flex;
+        // width: 100%;
         justify-content: space-between;
         &:nth-child(even) {
           background: #f3faff;
