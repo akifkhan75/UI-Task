@@ -30,10 +30,10 @@ gulp.task("default", ["watch"], function() {
 gulp.task("sass", function() {
   console.log("sass");
   return gulp
-    .src("sass/*.scss")
+    .src("app/assets/sass/*.scss")
     .pipe(sass())
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("css"))
+    .pipe(gulp.dest("app/assets/css"))
     .pipe(
       browserSync.reload({
         stream: true
@@ -42,9 +42,9 @@ gulp.task("sass", function() {
 });
 
 gulp.task("watch", ["sass", "useref", "browserSync"], function() {
-  gulp.watch("sass/*.scss", ["sass"]);
-  gulp.watch("*.html", browserSync.reload);
-  gulp.watch("js/*.js", browserSync.reload);
+  gulp.watch("app/assets/sass/*.scss", ["sass"]);
+  gulp.watch("app/*.html", browserSync.reload);
+  gulp.watch("app/assets/js/*.js", browserSync.reload);
 });
 
 gulp.task("browserSync", function() {
@@ -57,7 +57,7 @@ gulp.task("browserSync", function() {
 
 gulp.task("useref", function() {
   return gulp
-    .src("*.html")
+    .src("app/*.html")
     .pipe(useref())
     .pipe(gulpif("*.js", uglify()))
     .pipe(gulpif("*.css", cssNano()))
