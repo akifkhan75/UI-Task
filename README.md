@@ -4,5 +4,6 @@
 
 <ul>
     <li>Clone or Download</li>
-    <li>open index.html file</li>
+    <li>npm install</li>
+    <li>npm start</li>
 </ul>

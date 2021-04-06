@@ -187,8 +187,8 @@ main {
           position: relative;
           &:before {
             content: "";
-            width: 12px;
-            height: 12px;
+            width: 0.75rem;
+            height: 0.75rem;
             border-radius: 2px;
             margin-right: 0.3rem;
             position: absolute;
@@ -281,11 +281,14 @@ main {
       background: #f8f8f8;
       // fixed
       // width: 99%;
-      // display: block;
+      display: block;
+      //
       tr {
-        // display: flex;
-        // width: 100%;
-        // justify-content: space-between;
+        //
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        //
         td {
           position: sticky;
           top: 0;
@@ -305,14 +308,16 @@ main {
     }
     tbody {
       // fixed
-      // display: block;
-      // // height: 230px;
-      // overflow-y: auto;
-      // width: 100%;
+      display: block;
+      height: 70vh;
+      overflow-y: auto;
+      width: 100%;
+      //
       tr {
         // fixed
-        // display: flex;
-        // width: 100%;
+        display: flex;
+        width: 100%;
+        //
         justify-content: space-between;
         &:nth-child(even) {
           background: #f3faff;
@@ -323,10 +328,10 @@ main {
         td {
           font-size: 0.88rem;
           color: #6b869a;
-          padding: 0.7rem 0.5rem;
+          padding: 0.7rem 0.6rem;
           flex: 1;
           .tag {
-            font-size: 7px;
+            font-size: 0.438rem;
             text-transform: uppercase;
             letter-spacing: 0.857143px;
             color: #fff;
@@ -367,6 +372,9 @@ main {
           }
         }
       }
+      .mCSB_inside .mCSB_container {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -399,5 +407,23 @@ main {
         padding-bottom: 0.1rem;
       }
     }
+  }
+}
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 12px;
+  }
+  .table-container table thead tr td,
+  .table-container table tbody tr td {
+    padding: 0.6rem 0.3rem;
+  }
+}
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  html {
+    font-size: 14px;
+  }
+  .table-container table thead tr td,
+  .table-container table tbody tr td {
+    padding: 0.6rem 0.3rem;
   }
 }

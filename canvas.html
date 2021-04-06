@@ -34,17 +34,17 @@
             /></a>
             <a
               href="javascript:void(0)"
-              onclick="addIcon('icons/icon-1.svg',250,560)"
+              onclick="addIcon('icons/icon-1.svg',250,1060)"
               ><img src="icons/icon-1.svg" alt=""
             /></a>
             <a
               href="javascript:void(0)"
-              onclick="addIcon('icons/icon-3.svg',430,770)"
+              onclick="addIcon('icons/icon-3.svg',630,570)"
               ><img src="icons/icon-3.svg" alt=""
             /></a>
             <a
               href="javascript:void(0)"
-              onclick="addIcon('icons/icon-4.svg',510,580)"
+              onclick="addIcon('icons/icon-4.svg',610,1000)"
               ><img src="icons/icon-4.svg" alt=""
             /></a>
             <div class="toolbar-controls">
@@ -53,44 +53,6 @@
           </div>
         </div>
         <canvas id="canvas" width="1600" height="900"></canvas>
-        <!-- <svg
-          id="icon-1"
-          draggable="true"
-          onclick="addCircle()"
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M25 0C38.8071 0 50 11.1929 50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0Z"
-            fill="#6B869A"
-          />
-          <path
-            d="M25 1C11.7452 1 1 11.7452 1 25C1 38.2548 11.7452 49 25 49C38.2548 49 49 38.2548 49 25C49 11.7452 38.2548 1 25 1Z"
-            fill="white"
-          />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 15C14.8954 15 14 15.8954 14 17V23C14 24.1046 14.8954 25 16 25H22C23.1046 25 24 24.1046 24 23V17C24 15.8954 23.1046 15 22 15H16ZM16 26C14.8954 26 14 26.8954 14 28V34C14 35.1046 14.8954 36 16 36H22C23.1046 36 24 35.1046 24 34V28C24 26.8954 23.1046 26 22 26H16ZM25 17C25 15.8954 25.8954 15 27 15H33C34.1046 15 35 15.8954 35 17V23C35 24.1046 34.1046 25 33 25H27C25.8954 25 25 24.1046 25 23V17ZM27 26C25.8954 26 25 26.8954 25 28V34C25 35.1046 25.8954 36 27 36H33C34.1046 36 35 35.1046 35 34V28C35 26.8954 34.1046 26 33 26H27Z"
-            fill="url(#paint0_linear)"
-          />
-          <defs>
-            <linearGradient
-              id="paint0_linear"
-              x1="45.266"
-              y1="25.734"
-              x2="24.734"
-              y2="5.20201"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="#51BCF5" />
-              <stop offset="1" stop-color="#355EE7" />
-            </linearGradient>
-          </defs>
-        </svg> -->
       </section>
     </main>
 
@@ -105,8 +67,47 @@
       var canvas = new fabric.Canvas("canvas");
 
       $(function() {
-        addIcon("icons/icon-6.svg");
+        addIcon("icons/icon-6.svg", 400, 800);
       });
+
+      var firstObj = false;
+      var targetObj;
+      var centerObj;
+      var from;
+      var to;
+      var line;
+      var objArr = [];
+
+      function onObjectSelected(e) {
+        if (canvas.getObjects().indexOf(e.target) == 0) {
+          firstObj = true;
+          centerObj = e.target;
+        } else {
+          firstObj = false;
+          targetObj = e.target;
+        }
+
+        if (e.target.get("type") == "image") {
+          e.target.bringForward();
+        } else {
+          e.target.sendBackwards();
+        }
+
+        objArr.push(e.target);
+        // console.log("arr", objArr);
+      }
+      canvas.on("object:added", onObjectSelected);
+
+      // make line
+      function makeLine(coords) {
+        return new fabric.Line(coords, {
+          fill: "#6B869A",
+          stroke: "#6B869A",
+          strokeWidth: 2,
+          selectable: false,
+          hasControls: false
+        });
+      }
 
       function addIcon(icon, _t, _l) {
         var c = fabric.Image.fromURL(icon, function(svg) {
@@ -123,10 +124,34 @@
               hasControls: true
             })
             .scale(1.6);
-
           canvas.add(svg);
+          // add line
+          if (firstObj != true) {
+            from = centerObj.getCenterPoint();
+            to = targetObj.getCenterPoint();
+            line = makeLine([from.x, from.y, to.x, to.y]);
+            canvas.add(line);
+          }
         });
       }
+
+      canvas.on("object:moving", function(e) {
+        var p = e.target;
+        var i = canvas.getObjects().indexOf(e.target);
+        if (firstObj != true) {
+          if (i == 0) {
+            objArr.forEach((item, i) => {
+              objArr[i].set({ x1: p.left, y1: p.top });
+            });
+          } else {
+            objArr[i].set({
+              x2: objArr[i - 1].left,
+              y2: objArr[i - 1].top
+            });
+          }
+        }
+        canvas.renderAll();
+      });
     </script>
   </body>
 </html>

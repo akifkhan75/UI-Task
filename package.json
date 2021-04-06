@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/akifkhan75/UI-Task#readme",
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "browser-sync": "^2.26.14",
+    "gulp": "^3.9.1",
     "gulp-sass": "^4.1.0"
   }
 }

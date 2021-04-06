@@ -186,8 +186,8 @@ main {
           position: relative; }
           .table-container .table-header .active-alarms p span:before {
             content: "";
-            width: 12px;
-            height: 12px;
+            width: 0.75rem;
+            height: 0.75rem;
             border-radius: 2px;
             margin-right: 0.3rem;
             position: absolute;
@@ -256,59 +256,73 @@ main {
     height: 100px;
     background: #f8f8f8; }
     .table-container table thead {
-      background: #f8f8f8; }
-      .table-container table thead tr td {
-        position: sticky;
-        top: 0;
-        font-size: 0.8rem;
-        color: #848484;
-        padding: 0.7rem 0.6rem;
-        flex: 1; }
-        .table-container table thead tr td a {
-          font-size: 0.7rem;
-          color: #79a8cb; }
-        .table-container table thead tr td.description {
-          flex: 7; }
-    .table-container table tbody tr {
-      justify-content: space-between; }
-      .table-container table tbody tr:nth-child(even) {
-        background: #f3faff; }
-      .table-container table tbody tr:nth-child(odd) {
-        background: #fff; }
-      .table-container table tbody tr td {
-        font-size: 0.88rem;
-        color: #6b869a;
-        padding: 0.7rem 0.5rem;
-        flex: 1; }
-        .table-container table tbody tr td .tag {
-          font-size: 7px;
-          text-transform: uppercase;
-          letter-spacing: 0.857143px;
-          color: #fff;
-          padding: 0.3rem;
-          border-radius: 2px; }
-          .table-container table tbody tr td .tag-critical {
-            background: #f24f63; }
-          .table-container table tbody tr td .tag-major {
-            background: #ff9b00; }
-          .table-container table tbody tr td .tag-minor {
-            background: #f8e34f; }
-          .table-container table tbody tr td .tag-warning {
-            background: #12e8fd; }
-          .table-container table tbody tr td .tag-info {
-            background: #c7ddff; }
-        .table-container table tbody tr td a {
-          font-size: 0.7rem;
-          color: #1299fd; }
-          .table-container table tbody tr td a.muted {
-            color: #a8c5da; }
-        .table-container table tbody tr td.action-col {
-          display: flex;
-          justify-content: flex-end; }
-          .table-container table tbody tr td.action-col a {
-            padding: 0 0.3rem; }
-        .table-container table tbody tr td.description {
-          flex: 7; }
+      background: #f8f8f8;
+      display: block; }
+      .table-container table thead tr {
+        display: flex;
+        width: 100%;
+        justify-content: space-between; }
+        .table-container table thead tr td {
+          position: sticky;
+          top: 0;
+          font-size: 0.8rem;
+          color: #848484;
+          padding: 0.7rem 0.6rem;
+          flex: 1; }
+          .table-container table thead tr td a {
+            font-size: 0.7rem;
+            color: #79a8cb; }
+          .table-container table thead tr td.description {
+            flex: 7; }
+    .table-container table tbody {
+      display: block;
+      height: 70vh;
+      overflow-y: auto;
+      width: 100%; }
+      .table-container table tbody tr {
+        display: flex;
+        width: 100%;
+        justify-content: space-between; }
+        .table-container table tbody tr:nth-child(even) {
+          background: #f3faff; }
+        .table-container table tbody tr:nth-child(odd) {
+          background: #fff; }
+        .table-container table tbody tr td {
+          font-size: 0.88rem;
+          color: #6b869a;
+          padding: 0.7rem 0.6rem;
+          flex: 1; }
+          .table-container table tbody tr td .tag {
+            font-size: 0.438rem;
+            text-transform: uppercase;
+            letter-spacing: 0.857143px;
+            color: #fff;
+            padding: 0.3rem;
+            border-radius: 2px; }
+            .table-container table tbody tr td .tag-critical {
+              background: #f24f63; }
+            .table-container table tbody tr td .tag-major {
+              background: #ff9b00; }
+            .table-container table tbody tr td .tag-minor {
+              background: #f8e34f; }
+            .table-container table tbody tr td .tag-warning {
+              background: #12e8fd; }
+            .table-container table tbody tr td .tag-info {
+              background: #c7ddff; }
+          .table-container table tbody tr td a {
+            font-size: 0.7rem;
+            color: #1299fd; }
+            .table-container table tbody tr td a.muted {
+              color: #a8c5da; }
+          .table-container table tbody tr td.action-col {
+            display: flex;
+            justify-content: flex-end; }
+            .table-container table tbody tr td.action-col a {
+              padding: 0 0.3rem; }
+          .table-container table tbody tr td.description {
+            flex: 7; }
+      .table-container table tbody .mCSB_inside .mCSB_container {
+        margin-right: 0; }
 
 .canvas-section {
   display: flex;
@@ -334,3 +348,17 @@ main {
       .toolbar-container .toolbar-controls img {
         padding: 0.1rem;
         padding-bottom: 0.1rem; }
+
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 12px; }
+  .table-container table thead tr td,
+  .table-container table tbody tr td {
+    padding: 0.6rem 0.3rem; } }
+
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  html {
+    font-size: 14px; }
+  .table-container table thead tr td,
+  .table-container table tbody tr td {
+    padding: 0.6rem 0.3rem; } }
